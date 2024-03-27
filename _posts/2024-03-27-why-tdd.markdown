@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "TDD, why?"
+date:   2024-03-27
+categories: [software, development]
+---
+
+If we take TDD as explicit as it is, there is one question certainly pop-up.
+
+`How do we write test first?`
+
+It would be tricky since we rarely have an overview of what we endup.
+
+So?
+
+To make thing simpler (the mighty goal of all software engineer), let ask other question that more important
+ than write tests.
+
+`Why do we write test?`
+
+The answer is quite easy to answer, we want to make sure our final product (feature, piece of software, class, module) 
+works as expected, or at least!
+
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
