@@ -1,0 +1,27 @@
+The transaction needs:
+
+-----------------------
+Id
+-----------------------
+Sender -> public key
+Receiver -> public key
+Subject
+-----------------------
+
+Digital Signature
+-----------------------
+
+How to create Digital Signature
+
+private key or secret key (sk)
+public key (pk)
+
+fn sign (msg, sk) -> Signature
+fn verify (msg, signature, pk) -> bool 
+
+
+Transaction move to memory pool (mempool)
+node is verifying the transaction
+waiting for block creation
+
+

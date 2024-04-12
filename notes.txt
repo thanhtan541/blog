@@ -1,0 +1,13 @@
+write article about xxx
+
+- why xxx
+
+- History of xxx
+
+- How it is adopted in industry
+
+- Does is it still valid
+
+- Drawbacks
+
+
