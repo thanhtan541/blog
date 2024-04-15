@@ -21,10 +21,15 @@ categories: [software, development]
 - Thus, same application code can run on different hardware, os, or in techinical term, cross-platform. Each platform has a dedicated runtime, e.g: Nodejs support Windows, Linux, Macos, AIX (IBM)
 
 `How does it work?`
- Runtime contains a set of components
-- A garbage collector 
+Runtime contains a set of components
+- A memory management approachs, each of these can be used together
+  - Programmatic way: C/C++
+  - Automation process: Garbage Collector (GC)
+  - By complier: Ownership and Borrowing (Rust)
 - A compiler
 - A set of libraries for core functionalities
 - An execution engine that manages program execution, hamdling tasks such as loading code, memory allocation and threading.
 - Examples of runtime environments include the Java Virtual Machine (JVM) for Java applications, the .NET runtime for .NET applications, and the Python interpreter for Python applications.
 
+`What is next?`
+- Discussing about each components of a Runtime Environment
