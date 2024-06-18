@@ -21,12 +21,18 @@ categories: [software, development]
 `How does it work?`
 - How does it know a object is no longer in use and free it?
   - Based on the data in object header: mark word and klass word
+  - There is no reference point to that space.
 - JVM will put those objects in `marked` state.
 - Then JVM will perform GC and memory reclamation.
 - Usually, JVM split memory into different spaces to increase the performance of GC:
   - Short-live: Objects are newly created.
   - Survior: Objects that survice after GC run throught short-live space.
   - Permanent: Objects that survice after GC run throught survior space.
+
+  `When do objects consider to be sweep by GC`
+- Stack frame is poped out of stack
+- Nullify
+- Referencing
 
 `Are there any trade-off?`
 - Performance is decrease because of extra overhead.
