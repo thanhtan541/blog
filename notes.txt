@@ -11,3 +11,29 @@ write article about xxx
 - Drawbacks
 
 
+
+
+
+Rust attribute:
+- Inline
+-- Compiler always try to inline a function, const, etc ... to make code run faster which also mean increase the compile time.
+-- To modify this behavior, we can use Inline attribute to tell the compiler which we aim to do. E.g: #[inline(never)] which indicate that
+	the following block will have their own stack frame
+
+Copy vs Trait
+-- Primitive types are implicitly copyable -- Copy trait.
+-- It means that you can pass the variables to other variables or as function's argument without losing or sharing the data it involves.
+-- For leftover types, usually its hold the memory address in heap.
+-- When you do the above thing, the variables losing the ownership of that data.
+-- To achieve the same behaviors, you must explicitly implements those two traits via
+-- 1. Using the impl the to implement the require methods in Copy and Clone trait
+-- 2. Or derive Copy and Clone Atrributes.
+
+-- What is the main different between Copy and Clone
+-- Copy is bitwise copy in C++.
+-- Clone is you have completely new object T1 from T which identical and store in different address.
+-- Modify object T does not affect its cloned T1.
+
+What happens if we drop the T while it has a copy?
+-- Nothing, since the copied version has it own location in stack frame.
+
