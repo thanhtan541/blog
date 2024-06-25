@@ -37,3 +37,21 @@ Copy vs Trait
 What happens if we drop the T while it has a copy?
 -- Nothing, since the copied version has it own location in stack frame.
 
+
+
+
+---- Message Driven and Event Driven
+
+Message is some data sent to a specific address.
+Event is some data emitted from a component for anyone listenning to consume.
+
+- Event is a type of message.
+In message driven systems, Component A produces a message indicating it must be delivered to the address of component B.
+In event driven systems, components announce a location where they exposed their events.
+
+Based on the above descriptions, the message driven is building block for event driven systems.
+There are multiple type of message:
+- Command: a message send to produce a change on the state. If the receiving component. The command is valid, will update its state. 
+- Event: a message emitted by a component when its state changed. E.g: OpeningFile, ClosedFile ...
+- Query: a message sent to a component to obtain some information from it. It must include the sender address, so the receiver can send a Reply message.
+- Reply: the response to a query.
