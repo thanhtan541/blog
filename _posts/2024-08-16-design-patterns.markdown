@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Design patterns"
-date:   2024-08-02
+date:   2024-08-16
 categories: [software, development, web_app]
 ---
 
