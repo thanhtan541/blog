@@ -83,4 +83,10 @@ categories: [software, development, front_end]
 1. API: to get data from server: short/long polling, server sent event (SSE), websocket
 
 `Short polling, long polling, websocket, sse`
+- Todo
+
+`Grid vs Flex`
+- Not ovarlap in Flex
+
+
 
