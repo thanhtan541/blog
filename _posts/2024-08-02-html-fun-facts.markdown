@@ -89,4 +89,11 @@ categories: [software, development, front_end]
 - Not ovarlap in Flex
 
 
+`Script attributes`
+- Defer vs Async: most of the time should use defer for main scripts, async for less important like analytics. Defer make sure script load after Dom loaded
 
+`Event binding`
+- onevent: old API
+- addEventListener: newer and able to set multiple listenner -> goto, there is option parameter to control how to fire event listenner
+
+`Shadow DOM`
