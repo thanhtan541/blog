@@ -25,3 +25,12 @@ categories: [software, development, web_app, security]
 - CSRF
 - UI Redressing
 - MITN
+
+`Cookie policy header`
+- Control cookie to be shared and used.
+- Best practices are limit client-side and cross-side navigation to access the cookie
+- Types of web cookies:
+    - First-party cookies: This cookie usually used to remember non-sensitive information like language's setting. Normally all sites that you visitted have this kind of cookie
+    - Third-party cookies: Cookies from sites that you are not visitted. For example, ads tracking, google's analytics
+    - Session cookies: Temporary cookies that be removed when your close the browsers or your session is ended
+    - Persitent cookies: Last longer than session cookies. Login's information is one the usecase. Normally there is a hard limit for cookie's lifetime required by laws, e.g: 6 months ...
