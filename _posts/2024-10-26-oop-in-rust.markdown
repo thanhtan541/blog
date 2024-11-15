@@ -18,5 +18,5 @@ categories: [software, programming, paradigm]
 
 - Consequences:
     - No affect on runtime
-    - Lower compile time
+    - Slower compile time
 
