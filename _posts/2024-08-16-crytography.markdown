@@ -35,5 +35,14 @@ categories: [security]
     1. Public Key Encryption and Trapdoor One-Way Permutations
     1. Digital Signatures
 
-- Properties:
+`Scheme vs Mechanism`
+- Scheme is prefered to a set of goals and objectives, e.g: how to archive authencity, security based on environment. Based on these, we can choose specific mechanisms.
+- Mechanism focus on how, which means conrete implementations. E.g: AES or RSA ...
+`Key encapsulation vs wrapping`
+- Key encapsulation prefer to process involved keypair to encap and decap a shared secret key. Example: KEM
+- Key wrapping is used to describe a key to encryption another key. It usually involve **symmetric encryption**. Example: Key Management Service
 
+`Common encrytion scheme/mechanism/system`
+- Key Encryption Mechanism - **KEM**  
+    - Goal: to protect and adversaries to read or modify the encapsulation secret key (sk). The **sk** is usally known as `shared secret key` between two party to encrypt and decrypt exchanged messages.
+    - How: Use an asymmetric ecnryption system to exchange public key. `Note`: the secret key is usually smaller then other mechanism.
