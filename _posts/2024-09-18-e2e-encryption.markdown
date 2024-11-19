@@ -47,3 +47,7 @@ categories: [software, development, chat, security]
      - Decryption: Ciphertext **C** raise to **D** = Message **M** MOD **N**
 
 `Advance Encryption Standard` - AES
+- Symmetric key encryption
+- Message are encryted with a block (each byte of key will be a unit of block, e.g: 4x4 = 16 bytes = 128 bit)
+- There are multiple modes, each modes will have different steps and make the cipher harder to decrypt
+- See more at: TODO
