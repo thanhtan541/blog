@@ -16,13 +16,19 @@ categories: [software, development, chat, security]
 - Then, how to share secret key between two parties?
 
 `Diffie-Hellman Key exchange`
+- Goal: Establishing a shared secret key for encrypt/decrypt messages without sending information over publich channel or internet.
 - There are components that are exposed in publich area:
-    - g: generator
     - n: prime number - more than 128bit
+    - coprime: a number that share one the only 1 as factor with the number `n`. E.g: 10 and 11 are coprime
+    - order: number of coprimes of `n`
+    - g: generator - the element in the `order` that whoses power cycle through the whole coprime of `n`. Or called: Primitive Roots mod N, or `Generator of Mod N group`
+    - cyclic: group that has at least one generator
 - Both parties use these constants to generate their asymmetric keypair (public and private) - Sometime refer Asymmetric key encryption scheme.
 - The two public keys are then swap between two parties.
 - From local private key and foreign public key, the shared secret key is created - Symmetric key encryption
 - Messages are encrypted/decryted using that key
+
+- DLP is the key
 
 `RSA`
 - Related terms:
