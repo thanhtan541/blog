@@ -30,6 +30,20 @@ categories: [software, development, chat, security]
 
 - DLP is the key
 
+`Key encapsulation mechanism - KEM` 
+- Goal: Exhange `secret key` between two parties over public network or Internet
+- Procedure:
+    - Generate Keypair: pubkey + privkey
+    - Encap: func encap(k, pubkey)
+    - Decap: func decap(k, pubkey)
+- Related alg: RSA
+
+`KDF` -> Key Derivation Function
+- Goal: Generating key (mostly for encryption) from weak or non-uniform input (such as Pin Number, Password)
+- Procedure:
+    - fun (un-uniform input, salt, iter_number, output_len)
+- Related alg: SHA2 family, Password based: Argon or PBKDF2
+
 `RSA`
 - Related terms:
     - Factor: numbers that are being multiplied together equal to original number. E.g: factors of 12 is 1,2,3,4,6,12
@@ -57,3 +71,4 @@ categories: [software, development, chat, security]
 - Message are encryted with a block (each byte of key will be a unit of block, e.g: 4x4 = 16 bytes = 128 bit)
 - There are multiple modes, each modes will have different steps and make the cipher harder to decrypt
 - See more at: TODO
+

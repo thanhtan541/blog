@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "Messaging Layer Security - MLS Protocol"
+date:   2024-12-11
+categories: [software, crypton, protocol]
+---
+
+`MLS Protocol`-> End-to-end encryption protocol for large group has lots of members (> 1000)
+- Problem -> The protocol used in Signal or Whatapps (Doulbe Rachet) is not optimal for large groups since the Keypair Exchange process increase key changes by power of 2
+- Solution -> Use KemTree
+- Context -> It only give benifit with really big group. 
+- Consequences -> Complex operation to control group state
+- Example -> OpenMls
+
+`Primitives`
+- Forward secretcy - FS
+- Post-compromised security - PCS
+- Efficient asynchronous kye establishment - Key feature
+
+`Primitives`
+- Forward secretcy - FS
+- Post-compromised security - PCS
+- Efficient asynchronous kye establishment - Key feature
+
+
+`Related Algorithm`
+- HPKE - Hybrid public key encryption configuration
+    - KEM - check cryptographic post
+    - KDF - key derived function
