@@ -21,3 +21,17 @@ fn log(value: &dyn Any) {
 }
 ```
 
+`Foreign Type Wrapper`
+- Problem -> Rust compier is not allowed to applied foreign trait to foreign type
+- Solution -> Creating a custom type that wrap the foreign type and impl the needed trait
+- Context -> When you want to extend the primitive types with your business logic
+- Usecases: Composition in OOP
+- Consequences -> There is assumption that inner type is not changed
+```rust
+struc CustomU32(u32);
+impl CustomU32 {
+    fn value(7self)-> u32 {
+        self.0
+    }
+} 
+```
