@@ -10,8 +10,15 @@ categories: [security]
 - We need to robust security protocol to make sure the connection between point A and B are reliable.
 
 `What?`
-- Crytography is where security engineering meets mathematics.
+- Crytography (from Greek word means hidden) is where security engineering meets mathematics.
 - It provides a mechanism to send messages securely by transform the ogirin text to hard for decoding version
+
+`Attributes of Information Security`
+- Authenticity
+- Integrity
+- Availibity: 
+- Confidentiality: Limit who can read the data
+    - Only party has correct key (private or shared secret) are able to decrypt the data
 
 `How?`
 - There are 5 cryto primitives
