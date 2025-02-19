@@ -68,3 +68,44 @@ match cow_input {
     Cow::Owned(_) => println!("Move happened"),
 }
 ```
+
+`Deactivating Mutability`
+- Problem -> There is object that should not be modified even it's in mutable owned.
+- Solution -> Use new-type pattern and only implement Deref trait (not DerefMut).
+- Usecase -> State object such as Configuration only init once and be shared by multiple threads
+```rust
+pub struct Immutable<T>(T);
+
+impl<T> Copy for Immutable<T> where T: Copy {}
+
+impl<T> std::ops::Deref for Immutable<T> {
+    type Target = T;
+
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+
+pub struct Config {
+    pub base_url: String,
+}
+
+impl Config {
+    pub fn build(self) -> Immutable<Config> {
+        Immutable(self)
+    }
+}
+
+let mut config = Config {
+    base_url: "https://example.com".to_string(),
+};
+config.base_url = "https://example.com".to_string();
+
+let immutable_config = config.build();
+
+println!("immutable_config.base_url: {}", immutable_config.base_url);
+
+let mut mutable_config = immutable_config;
+// Cannot assign
+mutable_config.base_url = "https://example.com".to_string();
+```
