@@ -109,3 +109,62 @@ let mut mutable_config = immutable_config;
 // Cannot assign
 mutable_config.base_url = "https://example.com".to_string();
 ```
+
+`Use HashSet over HashMap`
+- Problem -> Group data into a lookupable datastruct HashMap increase the memory allocation for the key
+```rust
+struct Person {
+    name: String,
+    age: u8,
+}
+
+fn persons_by_name(persons: Vec<Person>) -> HashMap<String, Person> {
+    // key.clone() introduce duplicate data between key and value in struct
+    persons.into_iter().map(|p| (p.name.clone(), p)).collect()
+}
+```
+- Solution -> Use HashSet with reference to reuse data
+```rust
+use std::borrow::Borrow;
+use std::{
+    collections::HashSet,
+    hash::{Hash, Hasher},
+};
+
+struct PersonWithHash {
+    name: String,
+    age: u8,
+}
+impl Borrow<str> for PersonWithHash {
+    fn borrow(&self) -> &str {
+        &self.name
+    }
+}
+
+impl PartialEq for PersonWithHash {
+    fn eq(&self, other: &Self) -> bool {
+        self.name == other.name
+    }
+}
+
+impl Eq for PersonWithHash {}
+
+impl Hash for PersonWithHash {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        self.name.hash(state);
+    }
+}
+
+fn persons_by_name_with_hashset(persons: Vec<PersonWithHash>) -> HashSet<PersonWithHash> {
+    persons.into_iter().collect()
+}
+
+fn get_person_by_name<'p>(
+    persons: &'p HashSet<PersonWithHash>,
+    name: &str,
+) -> Option<&'p PersonWithHash> {
+    persons.get(name)
+}
+```
+- Usecases: Fast lookup data structure with optimize memory allocation
+- Consequences -> More boilerplate code and hard to read
